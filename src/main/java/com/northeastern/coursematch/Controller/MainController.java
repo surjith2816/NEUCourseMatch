@@ -1,7 +1,10 @@
-package com.northeastern.coursematch;
+package com.northeastern.coursematch.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import com.northeastern.coursematch.dao.UserRepository;
+import com.northeastern.coursematch.model.User;
 
 @RestController
 @RequestMapping(path="/demo")

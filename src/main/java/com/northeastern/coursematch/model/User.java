@@ -1,4 +1,4 @@
-package com.northeastern.coursematch;
+package com.northeastern.coursematch.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
