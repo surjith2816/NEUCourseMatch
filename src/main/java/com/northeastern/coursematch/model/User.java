@@ -1,4 +1,4 @@
-package com.northeastern.coursematch;
+package com.northeastern.coursematch.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -8,13 +8,22 @@ import jakarta.persistence.Id;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private int id;
 
     private String name;
 
     private String email;
+    
+    public User(){
+    	
+    }
+    
+    public User(String name, String email) {
+    	this.name = name;
+    	this.email = email;
+    }
 
-    private Integer getId(){
+    private int getId(){
         return id;
     }
 
@@ -26,7 +35,7 @@ public class User {
         return email;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
