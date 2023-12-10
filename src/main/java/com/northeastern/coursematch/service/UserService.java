@@ -1,17 +1,18 @@
 package com.northeastern.coursematch.service;
 
+import com.northeastern.coursematch.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.northeastern.coursematch.dao.UserDAO;
+import com.northeastern.coursematch.dao.UserDao;
 import com.northeastern.coursematch.model.User;
 
 @Service
 public class UserService {
-	private final UserDAO userdao;
+	private final UserDao userdao;
 	 
 	@Autowired
-	    public UserService(UserDAO userdao) {
+	    public UserService(UserDao userdao) {
 	        this.userdao = userdao;
 	    }
 
