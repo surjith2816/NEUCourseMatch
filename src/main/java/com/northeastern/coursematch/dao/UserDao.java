@@ -1,8 +1,9 @@
 package com.northeastern.coursematch.dao;
 
-import org.springframework.stereotype.Repository;
+import org.springframework.data.repository.CrudRepository;
 
-@Repository
-public class UserDao {
+import com.northeastern.coursematch.model.User;
+
+public interface UserDAO extends CrudRepository<User, Integer> {
 
 }
