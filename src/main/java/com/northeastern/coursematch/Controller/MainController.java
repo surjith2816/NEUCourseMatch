@@ -11,6 +11,8 @@ import com.northeastern.coursematch.service.ProfessorService;
 import com.northeastern.coursematch.service.StudentService;
 import com.northeastern.coursematch.service.UserService;
 
+import jakarta.servlet.ServletContext;
+
 @Controller
 public class MainController {
     @Autowired
@@ -22,9 +24,21 @@ public class MainController {
     @Autowired
     private ProfessorService professorService;
 
+    @Autowired
+	private ServletContext servletContext;
+    
     @RequestMapping("/")
     public String signup() {
+    	return "index";
+    }
+    
+    
+    @RequestMapping("/get")
+    public String get() {
+Professor pf = professorService.getProfessorById(3);
     	
+    	
+    	System.out.println(pf.getEmail());
     	return "index";
     }
     
@@ -42,9 +56,7 @@ public class MainController {
     	
     	
 //    	User user = new User(name,email,"");
-    	
 //    	userService.saveUser(user);
-    	
     	return "index";
     }
 //    @PostMapping(path = "/add")

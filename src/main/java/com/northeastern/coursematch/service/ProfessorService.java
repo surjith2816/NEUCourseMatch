@@ -22,12 +22,14 @@ public class ProfessorService {
 	    	professordao.save(professor);
 	    }
 
-	    public User getProfessorById(int userId) {
+	    public Professor getProfessorById(int userId) {
 	        return professordao.findById(userId).orElse(null);
 	    }
 
 	    public void deleteProfessor(int userId) {
 	    	professordao.deleteById(userId);
 	    }
+	    
+	    
 
 }
