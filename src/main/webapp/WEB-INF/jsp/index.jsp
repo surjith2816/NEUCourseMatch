@@ -260,7 +260,7 @@
 
                     <div class="input_box">
                         <span class="icon"><i class="uil uil-user"></i></span>
-                        <input type="text" name="firstname" required>
+                        <input type="text" name="name" required>
                         <label>First Name</label>
                     </div>
 
@@ -270,7 +270,19 @@
                         <label>Last Name</label>
                     </div>
 
-                   
+                    <div class="roletitle">Select Role:</div>
+
+                    <div class="rolebtn">
+                        <div class="radiolabel">
+                            <input type="radio" id="professor" name="role" value="professor" required>
+                            <label for="professor">Professor</label>
+                        </div>
+                    
+                        <div class="radiolabel">
+                            <input type="radio" id="student" name="role" value="student" required>
+                            <label for="student">Student</label>
+                        </div>
+                    </div>
 
                     <div class="input_box">
                         <span class="icon"><i class="uil uil-envelope"></i></span>
@@ -280,7 +292,7 @@
 
                     <div class="input_box">
                         <span class="icon"><i class="uil uil-key-skeleton"></i></span>
-                        <input type="password" required>
+                        <input type="password" name ="password" required>
                         <label>Password</label>
                     </div>
 

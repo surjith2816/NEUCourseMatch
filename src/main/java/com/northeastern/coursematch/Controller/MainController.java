@@ -2,15 +2,25 @@ package com.northeastern.coursematch.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import com.northeastern.coursematch.model.Professor;
 import com.northeastern.coursematch.model.User;
+import com.northeastern.coursematch.service.ProfessorService;
+import com.northeastern.coursematch.service.StudentService;
 import com.northeastern.coursematch.service.UserService;
 
 @Controller
 public class MainController {
     @Autowired
     private UserService userService;
+    
+    @Autowired
+    private StudentService studentService;
+    
+    @Autowired
+    private ProfessorService professorService;
 
     @RequestMapping("/")
     public String signup() {
@@ -21,11 +31,19 @@ public class MainController {
     
     @PostMapping(path="/createUser")
     @ResponseBody
-    public String submit(@RequestParam(name = "email") String email, @RequestParam(name = "firstname") String name){
+    public String submit(User userobj){
     	
-    	User user = new User(name,email);
+    	if(userobj.getRole().equals("professor")) {
+    		professorService.saveProfessor(new Professor(userobj.getName(),userobj.getRole(), userobj.getEmail(), userobj.getPassword()));
+    	}
+    	else {
+    		
+    	}
     	
-    	userService.saveUser(user);
+    	
+//    	User user = new User(name,email,"");
+    	
+//    	userService.saveUser(user);
     	
     	return "index";
     }
